@@ -3,7 +3,7 @@
 	<menu id="root-menu" label="Openbox 3">
 		<item label="term">
 			<action name="Execute">
-				<execute>terminology -2</execute>
+				<execute>urxvt -e tmux</execute>
 			</action>
 		</item>
 		<item label="evince">
@@ -19,6 +19,16 @@
 		<item label="www">
 			<action name="Execute">
 				<execute>chromium-browser</execute>
+			</action>
+		</item>
+		<item label="slack">
+			<action name="Execute">
+				<execute>slack</execute>
+			</action>
+		</item>
+		<item label="tidal">
+			<action name="Execute">
+				<execute>tidal</execute>
 			</action>
 		</item>
 		<item label="skype">
@@ -48,6 +58,12 @@
 				<execute>baobab</execute>
 			</action>
 		</item>
+		<separator/>
+    <item label="tint2 restart">
+      <action name="Execute">
+        <execute>killall -SIGUSR1 tint2</execute>
+      </action>
+    </item>
 		<separator/>
 		<menu id="root-menu-74225" label="openbox">
 			<item label="arandr">

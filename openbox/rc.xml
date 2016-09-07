@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Arcbox</name>
+    <name>Nightmare</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -394,14 +394,20 @@
     <!-- Keybindings for running applications -->
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
-        <command>amixer -q sset Master 7%+</command>
+          <command>amixer -D pulse set Master 5%+ unmute</command>
       </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-      <action name="Execute">
-        <command>amixer -q sset Master 7%-</command>
-      </action>
+        <action name="Execute">
+            <command>amixer -D pulse set Master 5%- unmute</command>
+        </action>
     </keybind>
+    <keybind key="XF86AudioMute">
+        <action name="Execute">
+            <command>amixer -D pulse set Master toggle</command>
+        </action>
+    </keybind>
+
     <keybind key="A-F2">
       <action name="Execute">
         <startupnotify>
@@ -420,7 +426,16 @@
         <command>xflock4</command>
       </action>
     </keybind>
-    <keybind key="W-w">
+    <keybind key="W-r">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>toggle_redshift</name>
+        </startupnotify>
+        <command>toggle_redshift</command>
+      </action>
+      </keybind>
+      <keybind key="W-w">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
@@ -429,13 +444,22 @@
         <command>chromium-browser</command>
       </action>
     </keybind>
+    <keybind key="W-s">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>slack</name>
+        </startupnotify>
+        <command>slack</command>
+      </action>
+    </keybind>
     <keybind key="W-t">
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>terminology</name>
+          <name>urxvt -e tmux</name>
         </startupnotify>
-        <command>terminology -2 -e tmux</command>
+        <command>urxvt -e tmux</command>
       </action>
     </keybind>
     <keybind key="W-f">
@@ -455,6 +479,15 @@
         </startupnotify>
         <command>evince</command>
       </action>
+      </keybind>
+      <keybind key="W-d">
+        <action name="Execute">
+          <startupnotify>
+            <enabled>true</enabled>
+            <name>tidal</name>
+          </startupnotify>
+          <command>tidal</command>
+        </action>
       </keybind>
       <keybind key="W-e">
       <action name="Execute">

@@ -113,6 +113,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 " Bundle 'ryanoasis/vim-devicons'
 Bundle 'ntpeters/vim-better-whitespace'
 Bundle 'isRuslan/vim-es6'
+Bundle 'vim-utils/vim-man'
 
 " Themes below
 Bundle 'sjl/badwolf'
@@ -205,7 +206,7 @@ let g:ctrlp_custom_ignore = {
 
 set t_Co=256
 set background=dark
-colorscheme SweetCandy
+colorscheme badwolf
 hi CursorLine term=bold cterm=bold ctermbg=233
 
 highlight Normal ctermbg=NONE
@@ -227,6 +228,11 @@ let g:javascript_enable_domhtmlcss = 1
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
+map <C-c> "+Y
+
+nnoremap <silent> <C-S> :<C-u>Update<CR>
+inoremap <silent> <C-S> :<Esc><C-u>Update<CR>i
+
 " this is needed by webpack. it ensures that original file is overwritten:
 set backupcopy=yes
 
@@ -247,4 +253,3 @@ command -nargs=0 -bar Update if &modified
                            \|    endif
                            \|endif
 
-nnoremap <silent> <C-S> :<C-u>Update<CR>

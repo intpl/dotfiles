@@ -28,6 +28,7 @@ values."
      better-defaults
      colors
      emacs-lisp
+     common-lisp
      git
      github
      markdown
@@ -103,7 +104,7 @@ values."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner nil
+   dotspacemacs-startup-banner 'official
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -128,7 +129,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '( "Realtime" ; "Source Code Pro"
-                               :size 15
+                               :size 21
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -264,6 +265,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   )
 
 (defun dotspacemacs/user-config ()
+  (setq inferior-lisp-program "/usr/bin/clisp")
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration.

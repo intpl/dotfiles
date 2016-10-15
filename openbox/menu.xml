@@ -10,13 +10,23 @@
 			<action name="Execute">
 				<execute>evince</execute>
 			</action>
+    </item>
+    <item label="zeal">
+			<action name="Execute">
+				<execute>zeal</execute>
+			</action>
 		</item>
 		<item label="file">
 			<action name="Execute">
 				<execute>thunar</execute>
 			</action>
 		</item>
-		<item label="www">
+		<item label="Rambox">
+			<action name="Execute">
+				<execute>Rambox</execute>
+			</action>
+    </item>
+    <item label="www">
 			<action name="Execute">
 				<execute>chromium-browser</execute>
 			</action>
@@ -48,6 +58,16 @@
 				<execute>transmission-gtk</execute>
 			</action>
 		</item>
+    <item label="bleachbit">
+			<action name="Execute">
+				<execute>sudo bleachbit</execute>
+			</action>
+		</item>
+    <item label="virtualbox">
+      <action name="Execute">
+        <execute>virtualbox</execute>execute>
+      </action>
+    </item>
 		<item label="hexchat">
 			<action name="Execute">
 				<execute>hexchat</execute>
@@ -58,8 +78,15 @@
 				<execute>baobab</execute>
 			</action>
 		</item>
+		<menu id="root-menu-1337" label="games">
+			<item label="stuntrally">
+				<action name="Execute">
+					<execute>stuntrally</execute>
+				</action>
+			</item>
+    </menu>
 		<separator/>
-    <item label="tint2 restart">
+    <item label="tint2">
       <action name="Execute">
         <execute>killall -SIGUSR1 tint2</execute>
       </action>
@@ -95,7 +122,7 @@
 				</action>
 			</item>
 		</menu>
-		<menu id="root-menu-03421" label="systemctl">
+    <menu id="root-menu-03421" label="systemctl">
 			<item label="nm restart">
 				<action name="Execute">
 					<execute>sudo service network-manager restart</execute>

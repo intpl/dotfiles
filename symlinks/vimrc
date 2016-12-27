@@ -31,9 +31,7 @@ endif
 
 set path=$PWD/**
 
-if &shell =~# 'fish$'
-      set shell=bash
-    endif
+set shell=bash
 
 :noremap <C-P> @:<CR>
 
@@ -69,7 +67,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -95,7 +93,7 @@ Plug 'tpope/vim-surround'
 "Plug 'bruno-/vim-ruby-fold'
 "Plug 'godlygeek/tabular'
 "Plug 'plasticboy/vim-markdown'
-"Plug 'rking/ag.vim'
+Plug 'rking/ag.vim'
 Plug 'tmhedberg/matchit'
 "Plug 'fatih/vim-go'
 Plug 'elixir-lang/vim-elixir'
@@ -113,9 +111,13 @@ Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'gaogao1030/vim-skim'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-repeat'
+Plug 'sjl/gundo.vim'
+Plug 'othree/html5.vim'
+Plug 'elzr/vim-json'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'rust-lang/rust.vim'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -136,42 +138,6 @@ Plug 'morhetz/gruvbox'
 " Themes above
 
 call plug#end()
-
-let g:fzf_action = {
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
-      \ }
-nnoremap <c-p> :FZF<cr>
-nnoremap <c-t> :Buffers<cr>
-
-let g:fzf_buffers_jump = 1
-
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 " Syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -201,6 +167,17 @@ set wildmenu
 set winminheight=0
 
 set backspace=indent,eol,start
+
+set wildignore+=*/node_modules/*
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_switch_buffer = 0
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+  \}
 
 " Folding with space
 " nnoremap <Space> za

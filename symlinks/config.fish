@@ -1,15 +1,19 @@
 rvm default
 
 function v;vim $argv;end
-function e;emacs -nw $argv;end
+
+function zs;zeus server;end
+function zc;zeus console;end
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 function fish_greeting
-  #echo " -> you were chosen not because of who you are but because of who you can become." | lolcat
+  # echo " -> you were chosen not because of who you are but because of who you can become." | lolcat
+  # echo
+  # /opt/gsp-mnemo | lolcat
   echo
-  /opt/gsp-mnemo | lolcat
+  echo " ... what else?"
   echo
 end
 
@@ -89,3 +93,6 @@ function fish_prompt
 
   printf '%s > %s' (set_color blue) (set_color normal)
 end
+
+rvm default
+eval (direnv hook fish)

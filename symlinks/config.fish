@@ -2,8 +2,10 @@ rvm default
 
 function v;vim $argv;end
 
+function zss;zeus start;end
 function zs;zeus server;end
 function zc;zeus console;end
+function zr;zeus rspec $argv;end
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

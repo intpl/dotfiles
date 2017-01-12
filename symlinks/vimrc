@@ -118,6 +118,10 @@ Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-crystal'
+Plug 'vim-ruby/vim-ruby'
+Plug 'godlygeek/tabular'
+Plug 'jgdavey/vim-blockle'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -191,9 +195,9 @@ let g:ctrlp_custom_ignore = {
 " endif
 
 set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupdir=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set writebackup
 
 " let g:airline#extensions#tabline#enabled = 0
@@ -266,3 +270,8 @@ function! NERDTreeMapRefreshRoot()
         wincmd p
     endif
 endfunction
+
+autocmd FileType ruby compiler ruby
+let g:gundo_prefer_python3 = 1
+nnoremap <F4> :GundoToggle<CR>
+:let mapleader = ","

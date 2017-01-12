@@ -426,6 +426,17 @@
         <command>xflock4</command>
       </action>
     </keybind>
+    <keybind key="W-o">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>headphones</name>
+        </startupnotify>
+        <command>
+          amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100%
+        </command>
+      </action>
+    </keybind>
     <keybind key="W-r">
       <action name="Execute">
         <startupnotify>

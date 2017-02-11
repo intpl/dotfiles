@@ -2,8 +2,8 @@ rvm default
 
 function v;vim $argv;end
 
-function zss;zeus start;end
-function zs;zeus server;end
+function zs;zeus start;end
+function zss;zeus server;end
 function zc;zeus console;end
 function zr;zeus rspec $argv;end
 
@@ -35,16 +35,8 @@ function l
   /bin/ls --color=auto -CF $argv
 end
 
-function cdk
-  cd ~/code/dlog/backend
-end
-
-function cdl
-  cd ~/code/dlog/frontend
-end
-
-function cdm
-  cd ~/code/1op-elixir-vuejs
+function cdi
+  cd ~/work/schjarven-input-manager
 end
 
 function mkdircd
@@ -96,5 +88,6 @@ function fish_prompt
   printf '%s > %s' (set_color blue) (set_color normal)
 end
 
+set -gx PATH "$HOME/.cargo/bin" $PATH
 rvm default
 eval (direnv hook fish)

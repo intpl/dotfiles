@@ -213,24 +213,23 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-set background=dark
-colorscheme gruvbox
-hi CursorLine term=bold cterm=bold ctermbg=233
+colorscheme sol "winterd "SweetCandy gruvbox
+"hi CursorLine term=bold cterm=bold ctermbg=233
 
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-highlight Comment ctermbg=NONE
-highlight Constant ctermbg=NONE
-highlight Identifier ctermbg=NONE
-highlight Cursor ctermbg=NONE
-highlight String ctermbg=NONE
-highlight Character ctermbg=NONE
-highlight Number ctermbg=NONE
-highlight Special ctermbg=NONE
-highlight Folded ctermbg=NONE
-highlight PreProc ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight NonText ctermbg=NONE
+"highlight Comment ctermbg=NONE
+"highlight Constant ctermbg=NONE
+"highlight Identifier ctermbg=NONE
+"highlight Cursor ctermbg=NONE
+"highlight String ctermbg=NONE
+"highlight Character ctermbg=NONE
+"highlight Number ctermbg=NONE
+"highlight Special ctermbg=NONE
+"highlight Folded ctermbg=NONE
+"highlight PreProc ctermbg=NONE
 
-hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE
+"hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE
 
 let g:javascript_enable_domhtmlcss = 1
 imap <C-J> <Plug>snipMateNextOrTrigger

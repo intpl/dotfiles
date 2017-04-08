@@ -32,26 +32,26 @@ cursor_shape = block
 # terminal.sexy
 
 # white background (solarized light)
-foreground      = #586e75
-foreground_bold = #586e75
-cursor          = #586e75
-background      = #fdf6e3
-color0  = #002b36
-color8  = #657b83
-color1  = #dc322f
-color9  = #dc322f
-color2  = #859900
-color10 = #859900
-color3  = #b58900
-color11 = #b58900
-color4  = #268bd2
-color12 = #268bd2
-color5  = #6c71c4
-color13 = #6c71c4
-color6  = #2aa198
-color14 = #2aa198
-color7  = #93a1a1
-color15 = #fdf6e3
+#foreground      = #586e75
+#foreground_bold = #586e75
+#cursor          = #586e75
+#background      = #fdf6e3
+#color0  = #002b36
+#color8  = #657b83
+#color1  = #dc322f
+#color9  = #dc322f
+#color2  = #859900
+#color10 = #859900
+#color3  = #b58900
+#color11 = #b58900
+#color4  = #268bd2
+#color12 = #268bd2
+#color5  = #6c71c4
+#color13 = #6c71c4
+#color6  = #2aa198
+#color14 = #2aa198
+#color7  = #93a1a1
+#color15 = #fdf6e3
 
 # dark background (shapeshifter dark)
 #foreground      = #ababab
@@ -76,26 +76,26 @@ color15 = #fdf6e3
 #color15 = #f9f9f9
 
 # dark background (gjm)
-#foreground      = #c5c5c5
-#foreground_bold = #c5c5c5
-#cursor          = #c5c5c5
-#background      = #1c1c1c
-#color0  = #1c1c1c
-#color8  = #666666
-#color1  = #ff005b
-#color9  = #ff00a0
-#color2  = #cee318
-#color10 = #ccff00
-#color3  = #ffe755
-#color11 = #ff9f00
-#color4  = #048ac7
-#color12 = #48c6ff
-#color5  = #833c9f
-#color13 = #be67e1
-#color6  = #0ac1cd
-#color14 = #63e7f0
-#color7  = #e5e5e5
-#color15 = #f3f3f3
+foreground      = #c5c5c5
+foreground_bold = #c5c5c5
+cursor          = #c5c5c5
+background      = #1c1c1c
+color0  = #1c1c1c
+color8  = #666666
+color1  = #ff005b
+color9  = #ff00a0
+color2  = #cee318
+color10 = #ccff00
+color3  = #ffe755
+color11 = #ff9f00
+color4  = #048ac7
+color12 = #48c6ff
+color5  = #833c9f
+color13 = #be67e1
+color6  = #0ac1cd
+color14 = #63e7f0
+color7  = #e5e5e5
+color15 = #f3f3f3
 
 
 [hints]

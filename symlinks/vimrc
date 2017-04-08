@@ -28,6 +28,7 @@ endif
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
+:set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 set path=$PWD/**
 
@@ -94,6 +95,7 @@ Plug 'tpope/vim-surround'
 "Plug 'godlygeek/tabular'
 "Plug 'plasticboy/vim-markdown'
 Plug 'rking/ag.vim'
+Plug 'jremmen/vim-ripgrep'
 Plug 'tmhedberg/matchit'
 "Plug 'fatih/vim-go'
 Plug 'elixir-lang/vim-elixir'
@@ -122,6 +124,9 @@ Plug 'rhysd/vim-crystal'
 Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
 Plug 'jgdavey/vim-blockle'
+Plug 'w0rp/ale'
+Plug 'bufexplorer.zip'
+Plug 'tpope/vim-eunuch'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -139,6 +144,11 @@ Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aliou/moriarty.vim'
 Plug 'morhetz/gruvbox'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'nightsense/seabird'
+Plug 'zcodes/vim-colors-basic'
+Plug 'vim-scripts/PapayaWhip'
+
 " Themes above
 
 call plug#end()
@@ -172,7 +182,6 @@ set winminheight=0
 
 set backspace=indent,eol,start
 
-set wildignore+=*/node_modules/*
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -182,6 +191,19 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site|node_modules)$',
   \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
   \}
+
+set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_modules/*
+let g:ctrlp_use_caching = 0
+if executable('rg')
+	set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+elseif executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+endif
 
 " Folding with space
 " nnoremap <Space> za
@@ -213,23 +235,23 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme sol "winterd "SweetCandy gruvbox
+colorscheme molokai "BusyBee "PapayaWhip basic-light
 "hi CursorLine term=bold cterm=bold ctermbg=233
 
-"highlight Normal ctermbg=NONE
-"highlight NonText ctermbg=NONE
-"highlight Comment ctermbg=NONE
-"highlight Constant ctermbg=NONE
-"highlight Identifier ctermbg=NONE
-"highlight Cursor ctermbg=NONE
-"highlight String ctermbg=NONE
-"highlight Character ctermbg=NONE
-"highlight Number ctermbg=NONE
-"highlight Special ctermbg=NONE
-"highlight Folded ctermbg=NONE
-"highlight PreProc ctermbg=NONE
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight Comment ctermbg=NONE
+highlight Constant ctermbg=NONE
+highlight Identifier ctermbg=NONE
+highlight Cursor ctermbg=NONE
+highlight String ctermbg=NONE
+highlight Character ctermbg=NONE
+highlight Number ctermbg=NONE
+highlight Special ctermbg=NONE
+highlight Folded ctermbg=NONE
+highlight PreProc ctermbg=NONE
 
-"hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE
+hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE
 
 let g:javascript_enable_domhtmlcss = 1
 imap <C-J> <Plug>snipMateNextOrTrigger
@@ -274,3 +296,9 @@ autocmd FileType ruby compiler ruby
 let g:gundo_prefer_python3 = 1
 nnoremap <F4> :GundoToggle<CR>
 :let mapleader = ","
+nnoremap <Leader>W :w<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>wq :wq<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>bp :bp<CR>
+nnoremap <Leader>bn :bn<CR>

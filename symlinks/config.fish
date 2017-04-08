@@ -1,6 +1,7 @@
 rvm default
 
 function v;vim $argv;end
+function g;git $argv;end
 
 function zs;zeus start;end
 function zss;zeus server;end

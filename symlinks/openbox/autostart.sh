@@ -3,10 +3,10 @@ tint2 &
 #hsetroot -solid '#0D0D0D'
 nitrogen --restore
 xfce4-power-manager &
-compton &
+xfce4-volumed &
+#compton &
 dropbox start -i &
-volti &
-sleep 1; conky &
+#sleep 1; conky &
 synclient VertEdgeScroll=0 &
 amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100% &
 

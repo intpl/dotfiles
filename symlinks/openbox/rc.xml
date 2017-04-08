@@ -392,21 +392,23 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="XF86AudioRaiseVolume">
-      <action name="Execute">
-          <command>amixer -D pulse set Master 5%+ unmute</command>
-      </action>
-    </keybind>
-    <keybind key="XF86AudioLowerVolume">
+    <!--
+      <keybind key="XF86AudioRaiseVolume">
         <action name="Execute">
-            <command>amixer -D pulse set Master 5%- unmute</command>
+            <command>amixer -D pulse set Master 5%+ unmute</command>
         </action>
-    </keybind>
-    <keybind key="XF86AudioMute">
-        <action name="Execute">
-            <command>amixer -D pulse set Master toggle</command>
-        </action>
-    </keybind>
+      </keybind>
+      <keybind key="XF86AudioLowerVolume">
+          <action name="Execute">
+              <command>amixer -D pulse set Master 5%- unmute</command>
+          </action>
+      </keybind>
+      <keybind key="XF86AudioMute">
+          <action name="Execute">
+              <command>amixer -D pulse set Master toggle</command>
+          </action>
+      </keybind>
+    -->
 
     <keybind key="A-F2">
       <action name="Execute">
@@ -450,9 +452,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>chromium-browser</name>
+          <name>google-chrome-stable</name>
         </startupnotify>
-        <command>chromium-browser</command>
+        <command>google-chrome-stable</command>
       </action>
     </keybind>
     <keybind key="W-s">
@@ -468,9 +470,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>urxvt</name>
+          <name>termite</name>
         </startupnotify>
-        <command>urxvt -e tmux</command>
+        <command>termite --exec=tmux</command>
       </action>
     </keybind>
     <keybind key="W-f">
@@ -491,21 +493,12 @@
         <command>evince</command>
       </action>
       </keybind>
-      <keybind key="W-d">
+      <keybind key="W-e">
         <action name="Execute">
           <startupnotify>
             <enabled>true</enabled>
-            <name>tidal</name>
+            <name>leafpad</name>
           </startupnotify>
-          <command>tidal</command>
-        </action>
-      </keybind>
-      <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>leafpad</name>
-        </startupnotify>
         <command>leafpad</command>
       </action>
     </keybind>

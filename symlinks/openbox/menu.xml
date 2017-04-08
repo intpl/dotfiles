@@ -33,7 +33,7 @@
     </item>
     <item label="www">
 			<action name="Execute">
-				<execute>chromium-browser</execute>
+				<execute>google-chrome-stable</execute>
 			</action>
 		</item>
 		<item label="pragha">
@@ -64,6 +64,11 @@
 		<item label="PomoDoneApp">
 			<action name="Execute">
 				<execute>PomoDoneApp</execute>
+			</action>
+		</item>
+		<item label="vpn1click">
+			<action name="Execute">
+				<execute>sudo vpn1click</execute>
 			</action>
 		</item>
 		<separator/>

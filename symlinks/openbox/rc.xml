@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>cathexis</name>
+    <name>black_grass</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -452,9 +452,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>google-chrome-stable</name>
+          <name>chromium-browser</name>
         </startupnotify>
-        <command>google-chrome-stable</command>
+        <command>chromium-browser</command>
       </action>
     </keybind>
     <keybind key="W-s">

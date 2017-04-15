@@ -8,7 +8,8 @@ function zss;zeus server;end
 function zc;zeus console;end
 function zr;zeus rspec $argv;end
 
-export FZF_DEFAULT_COMMAND='ag -g ""'
+#export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 function fish_greeting
@@ -37,7 +38,7 @@ function l
 end
 
 function cdi
-  cd ~/work/schjarven-input-manager
+  cd ~/work/2homes-api
 end
 
 function mkdircd

@@ -86,7 +86,7 @@ battery_background_id = 0
 #---------------------------------------------
 # CLOCK
 #---------------------------------------------
-time1_format = %H:%M
+time1_format = / %d.%m.%y / %a / %H:%M /
 time1_font = AnonymousPro 12
 clock_font_color = #ffffff 100
 clock_padding = 4 0

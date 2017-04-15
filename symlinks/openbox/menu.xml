@@ -33,7 +33,7 @@
     </item>
     <item label="www">
 			<action name="Execute">
-				<execute>google-chrome-stable</execute>
+				<execute>chromium-browser</execute>
 			</action>
 		</item>
 		<item label="pragha">

@@ -127,6 +127,7 @@ Plug 'jgdavey/vim-blockle'
 Plug 'w0rp/ale'
 Plug 'bufexplorer.zip'
 Plug 'tpope/vim-eunuch'
+Plug 'sheerun/vim-polyglot'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -298,6 +299,7 @@ nnoremap <F4> :GundoToggle<CR>
 :let mapleader = ","
 nnoremap <Leader>W :w<CR>
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>bp :bp<CR>

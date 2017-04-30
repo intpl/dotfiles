@@ -128,6 +128,8 @@ Plug 'w0rp/ale'
 Plug 'bufexplorer.zip'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdcommenter'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -229,14 +231,14 @@ set writebackup
 set laststatus=2
 
 "autocmd vimenter * NERDTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <F2> :NERDTreeToggle<CR>
 
 set cursorline
 "hi CursorLine   cterm=NONE ctermbg=8
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme molokai "BusyBee "PapayaWhip basic-light
+colorscheme molokai "PapayaWhip BusyBee basic-light
 "hi CursorLine term=bold cterm=bold ctermbg=233
 
 highlight Normal ctermbg=NONE
@@ -260,8 +262,9 @@ smap <C-J> <Plug>snipMateNextOrTrigger
 
 map <C-c> "+y
 
-nnoremap <silent> <C-S> :<C-u>Update<CR>
-inoremap <silent> <C-S> :<Esc><C-u>Update<CR>i
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " this is needed by webpack. it ensures that original file is overwritten:
 set backupcopy=yes
@@ -292,6 +295,8 @@ function! NERDTreeMapRefreshRoot()
         wincmd p
     endif
 endfunction
+
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 autocmd FileType ruby compiler ruby
 let g:gundo_prefer_python3 = 1

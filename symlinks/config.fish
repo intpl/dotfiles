@@ -75,7 +75,7 @@ function ruby_version
 end
 
 function whoami_and_hostname
-  echo (set_color red)(whoami)'@'(hostname|cut -d . -f 1)(set_color normal)
+  echo (set_color blue)(whoami)'@'(hostname|cut -d . -f 2)(set_color normal)
 end
 
 function fish_prompt

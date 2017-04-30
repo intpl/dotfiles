@@ -66,9 +66,9 @@
 				<execute>PomoDoneApp</execute>
 			</action>
 		</item>
-		<item label="vpn1click">
+		<item label="Postman">
 			<action name="Execute">
-				<execute>sudo vpn1click</execute>
+                                <execute>/opt/Postman/Postman</execute>
 			</action>
 		</item>
 		<separator/>

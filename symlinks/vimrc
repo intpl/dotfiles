@@ -128,8 +128,9 @@ Plug 'w0rp/ale'
 Plug 'bufexplorer.zip'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
-Plug 'terryma/vim-multiple-cursors'
+" nie dziala z NerdTree, Rg/Ag etc. Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Shougo/neocomplete.vim'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -231,7 +232,7 @@ set writebackup
 set laststatus=2
 
 "autocmd vimenter * NERDTree
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 set cursorline
 "hi CursorLine   cterm=NONE ctermbg=8

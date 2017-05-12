@@ -12,6 +12,10 @@ function zr;zeus rspec $argv;end
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+function fish_user_key_bindings
+  bind \cl "clear | string replace \e\[3J '' ; fish_prompt"
+end
+
 function fish_greeting
   # echo " -> you were chosen not because of who you are but because of who you can become." | lolcat
   # echo

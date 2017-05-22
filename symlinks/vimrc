@@ -131,6 +131,8 @@ Plug 'sheerun/vim-polyglot'
 " nie dziala z NerdTree, Rg/Ag etc. Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
+Plug 'c-brenn/phoenix.vim'
+Plug 'tpope/vim-projectionist'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -303,9 +305,10 @@ autocmd FileType ruby compiler ruby
 let g:gundo_prefer_python3 = 1
 nnoremap <F4> :GundoToggle<CR>
 :let mapleader = ","
+nnoremap <Leader>W :w<CR>
 nnoremap <Leader>w :w<CR>
-nnoremap <Leader>q :q<CR>
 nnoremap <Leader>fs :w<CR>
+nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>

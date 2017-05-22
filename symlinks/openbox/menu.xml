@@ -21,9 +21,9 @@
 				<execute>thunar</execute>
 			</action>
 		</item>
-    <item label="Rambox">
+    <item label="messengerfordesktop">
 			<action name="Execute">
-				<execute>rambox</execute>
+				<execute>messengerfordesktop</execute>
 			</action>
     </item>
 		<item label="hexchat">

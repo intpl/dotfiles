@@ -70,7 +70,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
+"Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'KurtPreston/vim-autoformat-rails'
 "Plug 'bling/vim-airline'
@@ -108,7 +108,7 @@ Plug 'vim-utils/vim-man'
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
-Plug 'DrawIt'
+" DEPRECATED Plug 'DrawIt'
 Plug 'slim-template/vim-slim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'gaogao1030/vim-skim'
@@ -125,7 +125,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'godlygeek/tabular'
 Plug 'jgdavey/vim-blockle'
 Plug 'w0rp/ale'
-Plug 'bufexplorer.zip'
+" DEPRECATED Plug 'bufexplorer.zip'
 Plug 'tpope/vim-eunuch'
 Plug 'sheerun/vim-polyglot'
 " nie dziala z NerdTree, Rg/Ag etc. Plug 'terryma/vim-multiple-cursors'
@@ -133,6 +133,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/neocomplete.vim'
 Plug 'c-brenn/phoenix.vim'
 Plug 'tpope/vim-projectionist'
+Plug 'maxbrunsfeld/vim-yankstack'
 
 " Themes below
 Plug 'sjl/badwolf'
@@ -145,7 +146,7 @@ Plug 'farseer90718/flattr.vim'
 Plug 'tomasr/molokai'
 Plug 'vim-scripts/BusyBee'
 Plug 'gregsexton/Muon'
-Plug 'desert-warm-256'
+" DEPRECATED Plug 'desert-warm-256'
 Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aliou/moriarty.vim'
@@ -241,7 +242,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme molokai "PapayaWhip BusyBee basic-light
+colorscheme badwolf "molokai "PapayaWhip BusyBee basic-light
 "hi CursorLine term=bold cterm=bold ctermbg=233
 
 highlight Normal ctermbg=NONE
@@ -309,6 +310,11 @@ nnoremap <Leader>W :w<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>wq :wq<CR>
+nnoremap <Leader>cq :cq<CR>
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
+
+map <Leader>p obinding.pry_remote '0.0.0.0'<ESC>
+map <Leader>o obinding.pry<ESC>
+map <Leader>O Obinding.pry<ESC>

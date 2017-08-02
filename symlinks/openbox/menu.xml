@@ -111,6 +111,18 @@
       </action>
     </item>
 		<separator/>
+    <menu id="root-menu-04000" label="xrandr">
+			<item label="laptop">
+                              <action name="Execute">
+                                <execute>sh ~/.screenlayout/laptop.sh</execute>
+                              </action>
+			</item>
+			<item label="work">
+                              <action name="Execute">
+                                <execute>sh ~/.screenlayout/work.sh</execute>
+                              </action>
+			</item>
+		</menu>
 		<menu id="root-menu-74225" label="openbox">
 			<item label="arandr">
 				<action name="Execute">

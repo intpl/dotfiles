@@ -1,7 +1,7 @@
 caps_to_esc &
 tint2 &
-#hsetroot -solid '#0D0D0D'
-nitrogen --restore
+hsetroot -solid '#0D0D0D'
+#nitrogen --restore
 xfce4-power-manager &
 xfce4-volumed &
 #compton &

@@ -33,7 +33,7 @@
     </item>
     <item label="www">
 			<action name="Execute">
-				<execute>chromium-browser</execute>
+				<execute>firefox_developer_edition</execute>
 			</action>
 		</item>
 		<item label="pragha">

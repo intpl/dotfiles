@@ -1,10 +1,10 @@
 caps_to_esc &
 tint2 &
-hsetroot -solid '#0D0D0D'
-#nitrogen --restore
+#hsetroot -solid '#0D0D0D'
+nitrogen --restore
 xfce4-power-manager &
 xfce4-volumed &
-#compton &
+compton -b
 dropbox start -i &
 #sleep 1; conky &
 synclient VertEdgeScroll=0 &

@@ -302,6 +302,9 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-u">
+      <action name="Iconify"/>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
@@ -461,9 +464,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>chromium-browser</name>
+          <name>firefox_developer_edition</name>
         </startupnotify>
-        <command>chromium-browser</command>
+        <command>firefox_developer_edition</command>
       </action>
     </keybind>
     <keybind key="W-s">

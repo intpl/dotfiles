@@ -17,8 +17,8 @@ draw_borders=false,
 -------------------------------------
 --  Window Specifications
 -------------------------------------
-gap_x=1600,
-gap_y=80,
+gap_x=1700,
+gap_y=50,
 
 own_window=true,
 own_window_type="override",
@@ -69,37 +69,12 @@ template9=""
 conky.text = [[
 \
 \
-${font Roboto :size=64}${color0}\
-${alignc}${time %H}\
-\
-\
-\
-\
-${font Roboto Thin :size=64}${color1}:\
-\
-\
-\
-\
-${font Roboto Thin :size=64}${color2}\
-${time %M}${font}${color}
-\
-\
-\
-\
-${font Roboto Light :size=16}${color3}\
-${voffset 12}${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"}${color} \
-\
-\
-\
-\
-${font Roboto :size=16}${color4}\
-${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}${color} \
-\
-\
-\
-\
-${font Roboto Light :size=16}${color5}\
-${alignc}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${color}
+${font Realtime :size=16}${color0}\
+${time %H}:${time %M}${font}${color} ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"}${color} \
+::
+${font Realtime :size=16}${color4}\
+:: ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}${color} \
+${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${color}
 
 ${execbar pactl list sinks | grep "Volume: front" | cut -d " " -f6 | sed 's/%//g'}
 ]]

@@ -326,16 +326,16 @@ nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>wq :wq<CR>
 nnoremap <Leader>cq :cq<CR>
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>Q :q!<CR>
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bk :bdelete<CR>
 nnoremap <Leader>bd :bdelete<CR>
-noremap <Leader>n gT
-noremap <Leader>m gt
 
 map <Leader>p obinding.pry_remote '0.0.0.0'<ESC>
 map <Leader>o obinding.pry<ESC>
 map <Leader>O Obinding.pry<ESC>
+map <Leader>; A;<ESC>
 
 nmap ,t :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1

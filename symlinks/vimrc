@@ -248,7 +248,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme one-dark "PapayaWhip molokai BusyBee basic-light
+colorscheme badwolf "one-dark PapayaWhip molokai BusyBee basic-light
 "hi CursorLine term=bold cterm=bold ctermbg=233
 
 highlight Normal ctermbg=NONE
@@ -336,6 +336,7 @@ map <Leader>p obinding.pry_remote '0.0.0.0'<ESC>
 map <Leader>o obinding.pry<ESC>
 map <Leader>O Obinding.pry<ESC>
 map <Leader>; A;<ESC>
+map <Leader>, A,<ESC>
 
 nmap ,t :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1

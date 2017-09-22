@@ -182,11 +182,17 @@
     <showDelay>300</showDelay>
     <!-- in milliseconds (1000 = 1 second) -->
     <moveButton>Middle</moveButton>
-  
+
     <!-- 'Left', 'Middle', 'Right' -->
   </dock>
   <keyboard>
 <!-- <keyboard> -->
+
+    <keybind key="A-h"><action name="PreviousWindow" /></keybind>
+    <keybind key="A-j"><action name="PreviousWindow" /></keybind>
+
+    <keybind key="A-l"><action name="NextWindow" /></keybind>
+    <keybind key="A-k"><action name="NextWindow" /></keybind>
 
     <keybind key="W-h">
         <action name="UnmaximizeFull"/>

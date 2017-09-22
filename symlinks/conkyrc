@@ -72,7 +72,7 @@ conky.text = [[
 ${font Realtime :size=16}${color0}\
 ${time %H}:${time %M}${font}${color} ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"}${color} \
 ::
-${font Realtime :size=16}${color4}\
+${font Realtime :size=14}${color4}\
 :: ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}${color} \
 ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${color}
 

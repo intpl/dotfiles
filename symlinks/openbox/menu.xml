@@ -41,9 +41,9 @@
 				<execute>pragha</execute>
 			</action>
 		</item>
-		<item label="hipchat4">
+		<item label="slack">
 			<action name="Execute">
-				<execute>hipchat4</execute>
+				<execute>slack</execute>
 			</action>
 		</item>
 		<item label="tidal">

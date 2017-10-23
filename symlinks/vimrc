@@ -240,6 +240,10 @@ let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#ale#enabled = 1
 set laststatus=2
 
+let g:ale_linters = {
+\   'rust': ['rls'],
+\}
+
 "autocmd vimenter * NERDTree
 nnoremap <C-n> :NERDTreeToggle<CR>
 

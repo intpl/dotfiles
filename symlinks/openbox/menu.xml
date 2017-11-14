@@ -21,6 +21,11 @@
 				<execute>thunar</execute>
 			</action>
 		</item>
+    <item label="signal-desktop">
+			<action name="Execute">
+				<execute>signal-desktop</execute>
+			</action>
+    </item>
     <item label="messengerfordesktop">
 			<action name="Execute">
 				<execute>messengerfordesktop</execute>

@@ -102,6 +102,8 @@ Plug 'prettier/vim-prettier', {
 	\ 'for': ['javascript', 'css', 'less', 'scss', 'json', 'graphql'] }
 Plug 'will133/vim-dirdiff'
 Plug 'mhinz/vim-mix-format' " :MixFormat
+Plug 'chrisbra/NrrwRgn'
+Plug 'alvan/vim-closetag'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -125,11 +127,6 @@ Plug 'vim-scripts/PapayaWhip'
 
 call plug#end()
 
-"let g:UltiSnipsExpandTrigger = "<tab>"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
-"let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" All of your Plugins must be added before the following line
 filetype plugin indent on    " required
 set tags=./tags;
 set grepprg=ack
@@ -167,7 +164,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set writebackup
 
-let g:airline_theme='minimalist'
+let g:airline_theme='minimalist' " papercolor
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -183,7 +180,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme badwolf 
+colorscheme badwolf "" PapayaWhip
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE

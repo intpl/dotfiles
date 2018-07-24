@@ -164,7 +164,7 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set writebackup
 
-let g:airline_theme='minimalist' " papercolor
+let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -180,7 +180,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme badwolf "" PapayaWhip
+colorscheme badwolf "PapayaWhip 
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE

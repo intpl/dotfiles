@@ -46,9 +46,19 @@
 				<execute>pragha</execute>
 			</action>
 		</item>
+                <item label="com.github.geigi.cozy">
+			<action name="Execute">
+				<execute>com.github.geigi.cozy</execute>
+			</action>
+		</item>
 		<item label="slack">
 			<action name="Execute">
 				<execute>slack</execute>
+			</action>
+		</item>
+		<item label="spotify">
+			<action name="Execute">
+				<execute>spotify</execute>
 			</action>
 		</item>
 		<item label="tidal">
@@ -82,12 +92,6 @@
           <execute>/opt/android-studio/bin/studio.sh</execute>
         </action>
       </item>
-		<separator/>
-		<item label="-&gt; pdfs/">
-			<action name="Execute">
-				<execute>thunar ~/Dropbox_encrypted/pdfs</execute>
-			</action>
-		</item>
 		<separator/>
 		<item label="torrent">
 			<action name="Execute">

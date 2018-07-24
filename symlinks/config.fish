@@ -1,29 +1,24 @@
-rvm default
-
 function v;vim $argv;end
 function g;git $argv;end
 
-function zs;zeus start;end
-function zss;zeus server;end
-function zc;zeus console;end
-function zr;zeus rspec $argv;end
+function zs;rails s;end
+function zc;rails c;end
+function zr;rspec $argv;end
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 function fish_user_key_bindings
+  fzf_key_bindings
   bind \cl "clear | string replace \e\[3J '' ; fish_prompt"
 end
 
-function fish_greeting
-  # echo " -> you were chosen not because of who you are but because of who you can become." | lolcat
-  # echo
-  # /opt/gsp-mnemo | lolcat
-  echo
-  echo " ... what else?"
-  echo
-end
+#function fish_greeting
+#  echo
+#  echo " ... what else?"
+#  echo
+#end
 
 function headphones
    amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100%
@@ -42,7 +37,7 @@ function l
 end
 
 function cdi
-  cd ~/work/2homes-api
+  cd ~/work/zapakuj-to
 end
 
 function mkdircd
@@ -95,5 +90,6 @@ function fish_prompt
 end
 
 set -gx PATH "$HOME/.cargo/bin" $PATH
+set -gx PATH ~/.fzf/bin $PATH
 rvm default
 eval (direnv hook fish)

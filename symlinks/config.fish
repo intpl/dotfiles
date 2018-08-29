@@ -5,6 +5,8 @@ function zs;rails s;end
 function zc;rails c;end
 function zr;rspec $argv;end
 
+export EDITOR='vim'
+
 #export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -20,40 +22,34 @@ end
 #  echo
 #end
 
-function headphones
-   amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100%
-end
-
 function ll
-  /bin/ls --color=auto -l $argv
+  /bin/ls -l $argv
 end
 
 function la
-  /bin/ls --color=auto -A $argv
+  /bin/ls -A $argv
 end
 
 function l
-  /bin/ls --color=auto -CF $argv
+  /bin/ls -CF $argv
 end
 
 function cdi
   cd ~/work/zapakuj-to
 end
 
-function mkdircd
-  mkdir $argv
-  cd $argv
+function cdiv
+  cdi&v
 end
 
 function dropbox_encrypted_mount
   cryfs ~/Dropbox/encrypted_do_not_touch ~/Dropbox_encrypted
 end
 
-function aptgetupdateshit
-  sudo apt update
-  sudo apt dist-upgrade
+function mkdircd
+  mkdir $argv
+  cd $argv
 end
-
 
 set fish_git_dirty_color red
 set fish_git_not_dirty_color green
@@ -89,7 +85,11 @@ function fish_prompt
   printf '%s > %s' (set_color blue) (set_color normal)
 end
 
-set -gx PATH "$HOME/.cargo/bin" $PATH
-set -gx PATH ~/.fzf/bin $PATH
+set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
+
+set PATH $HOME/.cargo/bin $PATH
+#set -gx PATH ~/.fzf/bin $PATH
 rvm default
+
 eval (direnv hook fish)

@@ -1,4 +1,6 @@
-function v;vim $argv;end
+function v;nvim $argv;end
+function vim;nvim $argv;end
+function vi;nvim -u NONE $argv;end
 function g;git $argv;end
 
 function zs;rails s;end

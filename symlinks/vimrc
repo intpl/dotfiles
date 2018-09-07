@@ -1,4 +1,5 @@
 set nocompatible
+set hidden
 set encoding=utf-8
 filetype plugin indent on
 syntax on
@@ -106,6 +107,15 @@ Plug 'will133/vim-dirdiff'
 Plug 'mhinz/vim-mix-format' " :MixFormat
 Plug 'chrisbra/NrrwRgn'
 Plug 'alvan/vim-closetag'
+" Plug 'ap/vim-css-color'
+Plug 'alexgenco/neovim-ruby'
+Plug 'M4R7iNP/vim-inky'
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-endwise'
+Plug 'rhysd/committia.vim'
+Plug 'ck3g/vim-change-hash-syntax'
+Plug 'majutsushi/tagbar'
+
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -113,7 +123,6 @@ else
   Plug 'Shougo/deoplete.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'M4R7iNP/vim-inky'
 endif
 
 " Themes below
@@ -184,7 +193,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme BusyBee "badwolf "PapayaWhip
+colorscheme gotham256 "badwolf "PapayaWhip
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
@@ -251,6 +260,10 @@ let g:prettier#config#bracket_spacing = 'false'
 let g:prettier#config#trailing_comma = 'none'
 
 let mapleader = ","
+nmap ; :
+
+" This will allow you to select a word within visual mode, then with the quick double tap of / immediately search for the given word.
+vnoremap // y/<C-R>"<CR>"
 
 autocmd FileType ruby compiler ruby
 let g:gundo_prefer_python3 = 1
@@ -275,9 +288,12 @@ map <Leader>o obinding.pry<ESC>
 map <Leader>O Obinding.pry<ESC>
 map <Leader>; A;<ESC>
 map <Leader>, A,<ESC>
+nmap <Leader>` :TagbarToggle<CR>
 
 nmap ,t :NERDTreeFind<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
 let g:deoplete#enable_at_startup = 1
+
+map <Leader>rt :AsyncRun ripper-tags --exclude=.git --exclude=vendor --exclude=node_modules --exclude=log --exclude=tmp -R * `bundle show --paths`<CR><CR>

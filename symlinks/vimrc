@@ -61,6 +61,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'KurtPreston/vim-autoformat-rails'
 Plug 'sukima/xmledit'
@@ -79,7 +80,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'vim-utils/vim-man'
+" Plug 'vim-utils/vim-man'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
@@ -115,7 +116,8 @@ Plug 'tpope/vim-endwise'
 Plug 'rhysd/committia.vim'
 Plug 'ck3g/vim-change-hash-syntax'
 Plug 'majutsushi/tagbar'
-
+Plug 'XadillaX/json-formatter.vim'
+Plug 'hjson/vim-hjson'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -279,6 +281,8 @@ nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bk :bdelete<CR>
 nnoremap <Leader>bd :bdelete<CR>
+
+nnoremap <Leader>rg :Rg<CR>
 
 nnoremap <Leader>ad :ALEDisableBuffer<CR>
 nnoremap <Leader>ae :ALEEnableBuffer<CR>

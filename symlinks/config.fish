@@ -3,8 +3,8 @@ function vim;nvim $argv;end
 function vi;nvim -u NONE $argv;end
 function g;git $argv;end
 
-function zs;rails s;end
-function zc;rails c;end
+function zs;rails s $argv;end
+function zc;rails c $argv;end
 function zr;rspec $argv;end
 
 export EDITOR='vim'
@@ -36,13 +36,11 @@ function l
   /bin/ls -CF $argv
 end
 
-function cdi
-  cd ~/work/zapakuj-to
-end
+function cdi; cd ~/work/zapakuj-to; end
+function cdiv; cdi&v; end
 
-function cdiv
-  cdi&v
-end
+function cdizs; cdi&zs; end
+function cdizc; cdi&zc; end
 
 function dropbox_encrypted_mount
   cryfs ~/Dropbox/encrypted_do_not_touch ~/Dropbox_encrypted

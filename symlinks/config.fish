@@ -25,22 +25,24 @@ end
 #end
 
 function ll
-  /bin/ls -l $argv
+  /bin/ls -lG $argv
 end
 
 function la
-  /bin/ls -A $argv
+  /bin/ls -GA $argv
 end
 
 function l
-  /bin/ls -CF $argv
+  /bin/ls -CFG $argv
 end
 
 function cdi; cd ~/work/zapakuj-to; end
+
 function cdiv; cdi&v; end
 
 function cdizs; cdi&zs; end
 function cdizc; cdi&zc; end
+function cdizr; cdi&zr; end
 
 function dropbox_encrypted_mount
   cryfs ~/Dropbox/encrypted_do_not_touch ~/Dropbox_encrypted

@@ -61,8 +61,8 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'KurtPreston/vim-autoformat-rails'
 Plug 'sukima/xmledit'
 Plug 'scrooloose/nerdtree'
@@ -138,6 +138,7 @@ Plug 'gregsexton/Muon'
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/PapayaWhip'
 Plug 'vim-scripts/pyte'
+Plug 'KKPMW/sacredforest-vim'
 " Themes above
 
 call plug#end()
@@ -179,11 +180,11 @@ set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,/var/tmp,/tmp
 set writebackup
 
-let g:airline_theme='dark' " term_light
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#buffer_min_count = 2
+let g:airline_theme='lucius' " dark term_light
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#ale#enabled = 1
 set laststatus=2
 
@@ -191,31 +192,29 @@ let g:ale_linters = { 'rust': ['rls'] }
 
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-set cursorline
-set fillchars+=vert:\ 
-
+" set cursorline
+set fillchars=stl:\ ,stlnc:\ ,vert:\ 
 set t_Co=256
-colorscheme gotham256 "badwolf "PapayaWhip
+colorscheme sacredforest "gotham256 "badwolf "PapayaWhip
+set termguicolors
 
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-highlight Comment ctermbg=NONE
-highlight Constant ctermbg=NONE
-highlight Identifier ctermbg=NONE
-highlight Cursor ctermbg=NONE
-highlight String ctermbg=NONE
-highlight Character ctermbg=NONE
-highlight Number ctermbg=NONE
-highlight Special ctermbg=NONE
-highlight Folded ctermbg=NONE
-highlight PreProc ctermbg=NONE
+highlight Normal ctermbg=NONE guibg=NONE
+highlight NonText ctermbg=NONE guibg=NONE
+highlight Comment ctermbg=NONE guibg=NONE
+highlight Constant ctermbg=NONE guibg=NONE
+highlight Identifier ctermbg=NONE guibg=NONE
+highlight Cursor ctermbg=NONE guibg=NONE
+highlight String ctermbg=NONE guibg=NONE
+highlight Character ctermbg=NONE guibg=NONE
+highlight Number ctermbg=NONE guibg=NONE
+highlight Special ctermbg=NONE guibg=NONE
+highlight Folded ctermbg=NONE guibg=NONE
+highlight PreProc ctermbg=NONE guibg=NONE
 
-hi StatusLine                  ctermfg=7     ctermbg=8     cterm=NONE
-hi StatusLineNC                ctermfg=2     ctermbg=8     cterm=NONE
+hi StatusLine                  ctermfg=7     ctermbg=8     cterm=NONE           guibg=NONE
+hi StatusLineNC                ctermfg=2     ctermbg=8     cterm=NONE           guibg=NONE
 
-hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE
-
-highlight clear LineNr
+hi! VertSplit ctermfg=NONE ctermbg=NONE term=NONE guibg=NONE
 
 map <C-c> "+y
 
@@ -229,8 +228,7 @@ set backupcopy=yes " this is needed by webpack. it ensures that original file is
 set splitbelow
 set splitright
 
-
-highlight LineNr ctermfg=241
+" highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 set shell=/bin/bash
 
 command -nargs=0 -bar Update if &modified
@@ -265,7 +263,7 @@ let mapleader = ","
 nmap ; :
 
 " This will allow you to select a word within visual mode, then with the quick double tap of / immediately search for the given word.
-vnoremap // y/<C-R>"<CR>"
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 
 autocmd FileType ruby compiler ruby
 let g:gundo_prefer_python3 = 1
@@ -282,7 +280,10 @@ nnoremap <Leader>bn :bn<CR>
 nnoremap <Leader>bk :bdelete<CR>
 nnoremap <Leader>bd :bdelete<CR>
 
+nnoremap <Leader>g :Rg<CR>
 nnoremap <Leader>rg :Rg<CR>
+vnoremap <Leader>g y<Esc>:Rg <C-R>"<CR>
+vnoremap <Leader>rg y<Esc>:Rg <C-R>"<CR>
 
 nnoremap <Leader>ad :ALEDisableBuffer<CR>
 nnoremap <Leader>ae :ALEEnableBuffer<CR>

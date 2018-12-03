@@ -6,8 +6,6 @@ function zs;env WEB_CONCURRENCY=10 MAX_THREADS=10 rails s $argv;end
 function zc;rails c $argv;end
 function zr;rspec $argv;end
 
-function packhelp_dziwko;cd ~/work;sh start-servers.sh;end
-
 export EDITOR='nvim'
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'

@@ -1,13 +1,14 @@
 function v;nvim $argv;end
-function vim;nvim $argv;end
 function vi;nvim -u NONE $argv;end
 function g;git $argv;end
 
-function zs;rails s $argv;end
+function zs;env WEB_CONCURRENCY=10 MAX_THREADS=10 rails s $argv;end
 function zc;rails c $argv;end
 function zr;rspec $argv;end
 
-export EDITOR='vim'
+function packhelp_dziwko;cd ~/work;sh start-servers.sh;end
+
+export EDITOR='nvim'
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
@@ -36,7 +37,7 @@ function l
   /bin/ls -CFG $argv
 end
 
-function cdi; cd ~/work/zapakuj-to; end
+function cdi; cd ~/work/packhelp/creator; end
 
 function cdiv; cdi&v; end
 
@@ -51,6 +52,10 @@ end
 function mkdircd
   mkdir $argv
   cd $argv
+end
+
+function kill_all_processes_for_port_3000
+  kill (lsof -t -i :3000)
 end
 
 set fish_git_dirty_color red

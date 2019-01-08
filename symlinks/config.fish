@@ -3,7 +3,7 @@ function g;git $argv;end
 
 function zs;rails s;end
 function zc;rails c;end
-function zr;rspec $argv;end
+function zr;env RAILS_ENV=test bundle exec rspec $argv;end
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
@@ -14,11 +14,11 @@ function fish_user_key_bindings
   bind \cl "clear | string replace \e\[3J '' ; fish_prompt"
 end
 
-#function fish_greeting
-#  echo
-#  echo " ... what else?"
-#  echo
-#end
+function fish_greeting
+  echo
+  echo "Oh, hi Mark!"
+  echo
+end
 
 function headphones
    amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100%
@@ -37,7 +37,7 @@ function l
 end
 
 function cdi
-  cd ~/work/zapakuj-to
+  cd ~/work/away-spree
 end
 
 function mkdircd
@@ -89,7 +89,20 @@ function fish_prompt
   printf '%s > %s' (set_color blue) (set_color normal)
 end
 
-set -gx PATH "$HOME/.cargo/bin" $PATH
+function fishcognito
+  echo "Starting incognito session..."
+  env fish_history='' fish
+  echo "Exiting incognito session..."
+end
+function nvm
+   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+end
+
+nvm use default --silent
+
+# set -gx PATH "$HOME/.cargo/bin" $PATH
+# set -gx PATH "$HOME/go/bin" $PATH
+#rvm default
+
 set -gx PATH ~/.fzf/bin $PATH
-rvm default
 eval (direnv hook fish)

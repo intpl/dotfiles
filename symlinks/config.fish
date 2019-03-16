@@ -1,15 +1,22 @@
-function v;vim $argv;end
+function v;nvim $argv;end
 function g;git $argv;end
+function ec;emacsclient $argv;end
 
-function zs;rails s;end
+function zs;puma -C config/puma.rb;end
 function zc;rails c;end
 function zr;env RAILS_ENV=test bundle exec rspec $argv;end
+
+function cdi;cd ~/code/algorytmy; end
+function cdizc;cdi;zc;end
+function cdizr;cdi;zr;end
+function cdizs;cdi;zs;end
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export TAG_SEARCH_PROG="rg"
+export TAG_CMD_FMT_STRING="emacsclient +{{.LineNumber}}:{{.ColumnNumber}} {{.Filename}}"
 
 function fish_user_key_bindings
   fzf_key_bindings
@@ -22,10 +29,6 @@ function fish_greeting
   echo
 end
 
-function headphones
-   amixer -c 1 set Headphone on;amixer -c 1 set Headphone 100%
-end
-
 function ll
   /bin/ls --color=auto -l $argv
 end
@@ -36,10 +39,6 @@ end
 
 function l
   /bin/ls --color=auto -CF $argv
-end
-
-function cdi
-  cd ~/code/algorytmy
 end
 
 function mkdircd
@@ -78,13 +77,14 @@ function ruby_version
   echo (set_color cyan)(ruby --version | awk '{print $2}' | grep -ohE '[0-9]\.[0-9]\.[0-9]')(set_color normal)
 end
 
-function whoami_and_hostname
-  echo (set_color blue)(whoami)'@'(hostname|cut -d . -f 2)(set_color normal)
+# fix for prompt in Emacs
+function fish_title
+  true
 end
 
 function fish_prompt
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
-  printf '%s %s ' (whoami_and_hostname) (ruby_version)
+  printf '%s %s ' (set_color blue)(whoami)(set_color normal) (ruby_version)
   if test -n "$git_dir"
     printf '%s%s:%s%s' (set_color $fish_color_cwd) (prompt_pwd) (parse_git_branch) (set_color normal)
   else
@@ -99,6 +99,7 @@ function fishcognito
   env fish_history='' fish
   echo "Exiting incognito session..."
 end
+
 function nvm
    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
@@ -107,7 +108,8 @@ nvm use default --silent
 
 # set -gx PATH "$HOME/.cargo/bin" $PATH
 # set -gx PATH "$HOME/go/bin" $PATH
-#rvm default
 
 set -gx PATH ~/.fzf/bin $PATH
-eval (direnv hook fish)
+#eval (direnv hook fish)
+
+rvm default

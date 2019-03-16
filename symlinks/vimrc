@@ -180,7 +180,7 @@ set cursorline
 set fillchars+=vert:\ 
 
 set t_Co=256
-colorscheme badwolf "PapayaWhip 
+colorscheme gotham256 "badwolf "PapayaWhip 
 
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE

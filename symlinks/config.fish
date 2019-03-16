@@ -6,7 +6,7 @@ function zs;puma -C config/puma.rb;end
 function zc;rails c;end
 function zr;env RAILS_ENV=test bundle exec rspec $argv;end
 
-function cdi;cd ~/code/algorytmy; end
+function cdi;cd ~/code/learning; end
 function cdizc;cdi;zc;end
 function cdizr;cdi;zr;end
 function cdizs;cdi;zs;end

@@ -1,0 +1,20 @@
+#!/bin/bash
+# /usr/local/bin/goldendict (MagicMint) O0820
+# A proxy for GoldenDict to set the correct dictionary group
+# (ɔ) GPL-2, see /usr/share/common-licenses/GPL-2
+
+CONF=~/.goldendict/config
+
+# Take the first group which has a flag corresponding to the current language
+GROUP=$(awk -F 'id="' "/group icon=\"`echo $LANG | head -c2`/{print \$2}" \
+ $CONF | head -1 | cut -d'"' -f1)
+echo Group id = $GROUP
+
+# Make that group the default one
+sed -i "/<lastMainGroupId>/s/<lastMainGroupId>.*</<lastMainGroupId>$GROUP</" $CONF
+sed -i "/<lastPopupGroupId>/s/<lastPopupGroupId>.*</<lastPopupGroupId>$GROUP</" $CONF
+
+# Start the viewer
+exec /usr/bin/goldendict "$@"
+
+#End of script

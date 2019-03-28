@@ -18,6 +18,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export TAG_SEARCH_PROG="rg"
 export TAG_CMD_FMT_STRING="emacsclient +{{.LineNumber}}:{{.ColumnNumber}} {{.Filename}}"
 
+rvm default
+
 function fish_user_key_bindings
   fzf_key_bindings
   bind \cl "clear | string replace \e\[3J '' ; fish_prompt"
@@ -104,12 +106,10 @@ function nvm
    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 
-nvm use default --silent
+#nvm use default --silent
 
 # set -gx PATH "$HOME/.cargo/bin" $PATH
 # set -gx PATH "$HOME/go/bin" $PATH
 
 set -gx PATH ~/.fzf/bin $PATH
 #eval (direnv hook fish)
-
-rvm default

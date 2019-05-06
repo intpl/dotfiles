@@ -6,16 +6,18 @@ function zs;puma -C config/puma.rb;end
 function zc;rails c;end
 function zr;env RAILS_ENV=test bundle exec rspec $argv;end
 
-function cdi;cd ~/code/learning; end
+function cdi;cd ~/work/orms; end
 function cdizc;cdi;zc;end
 function cdizr;cdi;zr;end
 function cdizs;cdi;zs;end
 
 #export FZF_DEFAULT_COMMAND='ag -g ""'
+export EDITOR="nvim"
 export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export TAG_SEARCH_PROG="rg"
+#export TAG_CMD_FMT_STRING="v -c 'call cursor({{.LineNumber}}, {{.ColumnNumber}})' '{{.Filename}}'"
 export TAG_CMD_FMT_STRING="emacsclient +{{.LineNumber}}:{{.ColumnNumber}} {{.Filename}}"
 
 rvm default
@@ -53,6 +55,10 @@ function dropbox_encrypted_mount
 end
 
 function ec
+  emacsclient $argv
+end
+
+function e
   emacsclient $argv
 end
 
@@ -109,7 +115,11 @@ end
 #nvm use default --silent
 
 # set -gx PATH "$HOME/.cargo/bin" $PATH
-# set -gx PATH "$HOME/go/bin" $PATH
+set -gx PATH "$HOME/go/bin" $PATH
 
 set -gx PATH ~/.fzf/bin $PATH
 #eval (direnv hook fish)
+#
+ if test -z "$VISUAL"
+     set VISUAL vim
+ end

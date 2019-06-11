@@ -1,0 +1,90 @@
+!! Colorscheme
+
+!! ! special
+!! *.foreground: #93a1a1
+!! *.background: #141c21
+!! *.cursorColor: #afbfbf
+!! 
+!! ! black
+!! *.color0: #263640
+!! *.color8: #4a697d
+!! 
+!! ! red
+!! *.color1: #d12f2c
+!! *.color9: #fa3935
+!! 
+!! ! green
+!! *.color2: #819400
+!! *.color10: #a4bd00
+!! 
+!! ! yellow
+!! *.color3: #b08500
+!! *.color11: #d9a400
+!! 
+!! ! blue
+!! *.color4: #2587cc
+!! *.color12: #2ca2f5
+!! 
+!! ! magenta
+!! *.color5: #696ebf
+!! *.color13: #8086e8
+!! 
+!! ! cyan
+!! *.color6: #289c93
+!! *.color14: #33c5ba
+!! 
+!! ! white
+!! *.color7: #bfbaac
+!! *.color15: #fdf6e3
+
+*background:   #282a36
+*foreground:   #eff0eb
+*cursorColor:  #9aedfe
+
+*color0:      #33303b
+*color8:      #4f4b58
+*color1:      #ff5c57
+*color9:      #ff5c57
+*color2:      #5af78e
+*color10:     #5af78e
+*color3:      #f3f99d
+*color11:     #f3f99d
+*color4:      #57c7ff
+*color12:     #57c7ff
+*color5:      #ff6ac1
+*color13:     #ff6ac1
+*color6:      #9aedfe
+*color14:     #9aedfe
+*color7:      #eff0eb
+*color15:     #eff0eb
+
+!! URxvt Appearance
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.internalBorder: 6
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+URxvt.iso14755: false
+
+URxvt*font: xft:Iosevka SS01 Medium:size=14:antialias=true:hinting=true
+URxvt*boldFont: xft:Iosevka SS01 Medium:size=14:antialias=true:hinting=true
+URxvt*italicFont: xft:Source Code Pro:style=Oblique:size=14:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Oblique:size=14:antialias=true:hinting=true
+URxvt*letterSpace: -2
+
+URxvt.perl-ext-common: fullscreen,font-size
+
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+
+URxvt.keysym.F11: perl:fullscreen:switch
+
+!! URxvt.keysym.C-S-0x42: eval:selection_to_clipboard
+!! URxvt.keysym.C-S-0x55: eval:paste_clipboard
+

@@ -1,4 +1,9 @@
 function v;nvim $argv;end
+
+function vi
+  vim -u NONE $argv
+end
+
 function g;git $argv;end
 function ec;emacsclient $argv;end
 
@@ -82,7 +87,7 @@ function parse_git_branch
 end
 
 function ruby_version
-  echo (set_color cyan)(ruby --version | awk '{print $2}' | grep -ohE '[0-9]\.[0-9]\.[0-9]')(set_color normal)
+  echo (set_color cyan)(rvm-prompt)(set_color normal)
 end
 
 # fix for prompt in Emacs
@@ -92,7 +97,7 @@ end
 
 function fish_prompt
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
-  printf '%s %s ' (set_color blue)(whoami)(set_color normal) (ruby_version)
+  printf '%s ' (ruby_version)
   if test -n "$git_dir"
     printf '%s%s:%s%s' (set_color $fish_color_cwd) (prompt_pwd) (parse_git_branch) (set_color normal)
   else

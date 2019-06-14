@@ -42,7 +42,7 @@ BorderActivateAll=1,7
 BorderActivateClass=9
 
 [Effect-Slide]
-Duration=600
+Duration=200
 
 [ElectricBorders]
 Bottom=None

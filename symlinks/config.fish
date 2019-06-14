@@ -96,14 +96,14 @@ end
 
 function fish_prompt
   set -l git_dir (git rev-parse --git-dir 2> /dev/null)
-  printf '%s ' (ruby_version)
+  printf 'dell.%s ' (ruby_version)
   if test -n "$git_dir"
     printf '%s%s:%s%s' (set_color $fish_color_cwd) (prompt_pwd) (parse_git_branch) (set_color normal)
   else
     printf '%s%s%s' (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
   end
 
-  printf '%s > %s' (set_color blue) (set_color normal)
+  printf ' %s> %s' (set_color blue) (set_color normal)
 end
 
 function fishcognito
@@ -117,8 +117,10 @@ function nvm
 end
 
 function kde_blurry_pgrep
-  for WINPID in (xdotool search --pid (pgrep $argv))
-    xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $WINPID
+  for KONSOLE_PID in (pgrep $argv)
+    for WINPID in (xdotool search --pid $KONSOLE_PID)
+      xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $WINPID
+    end
   end
 end
 

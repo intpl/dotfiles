@@ -1,29 +1,36 @@
-function v;nvim $argv;end
-
-function vi
-  vim -u NONE $argv
-end
-
-function g;git $argv;end
+function vi; nvim -u NONE $argv; end
 function ec;emacsclient $argv;end
 
-function zs;puma -C config/puma.rb;end
+function em;emacs -nw $argv;end
+
+function g;git $argv;end
+
+function e;$EDITOR $argv; end
+function v;$EDITOR $argv; end
+
+function zs;bundle exec rails s;end
 function zc;rails c;end
 function zr;env RAILS_ENV=test bundle exec rspec $argv;end
 
-function cdi;cd ~/work/orms; end
+function cdi;cd ~/code/pjeski; end
 function cdizc;cdi;zc;end
 function cdizr;cdi;zr;end
 function cdizs;cdi;zs;end
 
-#export FZF_DEFAULT_COMMAND='ag -g ""'
-export EDITOR="nvim"
-export FZF_DEFAULT_COMMAND='rg --files --follow --color=never --glob "!./git/*"'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+function be; bundle exec $argv;end
+
+export FZF_DEFAULT_COMMAND='fd --type f --color=never'
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 
 export TAG_SEARCH_PROG="rg"
-#export TAG_CMD_FMT_STRING="v -c 'call cursor({{.LineNumber}}, {{.ColumnNumber}})' '{{.Filename}}'"
-export TAG_CMD_FMT_STRING="emacsclient +{{.LineNumber}}:{{.ColumnNumber}} {{.Filename}}"
+
+if set -q INSIDE_EMACS
+  export TAG_CMD_FMT_STRING="emacsclient +{{.LineNumber}}:{{.ColumnNumber}} {{.Filename}}"
+  export EDITOR="emacsclient"
+else
+  export TAG_CMD_FMT_STRING='nvim "+call cursor({{.LineNumber}}, {{.ColumnNumber}})" {{.Filename}}'
+  export EDITOR="nvim"
+end
 
 rvm default
 
@@ -32,22 +39,22 @@ function fish_user_key_bindings
   bind \cl "clear | string replace \e\[3J '' ; fish_prompt"
 end
 
-function fish_greeting
-  echo
-  echo "Oh, hi Mark!"
-  echo
-end
+function fish_greeting;; end
 
 function ll
-  /bin/ls --color=auto -l $argv
+  exa -lgh --git $argv
 end
 
 function la
-  /bin/ls --color=auto -A $argv
+  exa -lgah --git $argv
 end
 
 function l
-  /bin/ls --color=auto -CF $argv
+  exa -a $argv
+end
+
+function lt
+  exa -T $argv
 end
 
 function mkdircd
@@ -59,14 +66,6 @@ function dropbox_encrypted_mount
   cryfs ~/Dropbox/encrypted_do_not_touch ~/Dropbox_encrypted
 end
 
-function ec
-  emacsclient $argv
-end
-
-function e
-  emacsclient $argv
-end
-
 function aptgetupdateshit
   sudo apt update
   sudo apt dist-upgrade
@@ -76,7 +75,7 @@ set fish_git_dirty_color red
 set fish_git_not_dirty_color green
 
 function parse_git_branch
-  set -l branch (git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')
+  set -l branch (git rev-parse --abbrev-ref HEAD 2> /dev/null)
   set -l git_diff (git diff)
 
   if test -n "$git_diff"
@@ -117,14 +116,25 @@ function nvm
    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
 end
 
-#nvm use default --silent
+function kde_blurry_pgrep
+  for WINPID in (xdotool search --pid (pgrep $argv))
+    xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $WINPID
+  end
+end
 
-# set -gx PATH "$HOME/.cargo/bin" $PATH
+function ifad_vpn
+  sudo /home/b/code/openconnect-vjt/myvpn/run.sh
+end
+
+
+#nvm use default --silent
+#eval (direnv hook fish)
+
+set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/go/bin" $PATH
 
 set -gx PATH ~/.fzf/bin $PATH
-#eval (direnv hook fish)
-#
- if test -z "$VISUAL"
-     set VISUAL vim
- end
+set -gx PATH ~/.local/bin $PATH
+
+set -Ux VISUAL nvim
+set -U FZF_LEGACY_KEYBINDINGS 0

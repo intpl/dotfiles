@@ -1,5 +1,5 @@
 [$Version]
-update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
 
 [Compositing]
 AnimationSpeed=1
@@ -34,10 +34,10 @@ BorderActivateSphere=9
 RotationDuration=200
 
 [Effect-DesktopGrid]
-BorderActivate=9
+BorderActivate=3
 
 [Effect-PresentWindows]
-BorderActivate=3,5
+BorderActivate=5
 BorderActivateAll=1,7
 BorderActivateClass=9
 
@@ -95,6 +95,9 @@ count=0
 [TabBox]
 BorderActivate=9
 BorderAlternativeActivate=9
+DesktopLayout=org.kde.breeze.desktop
+DesktopListLayout=org.kde.breeze.desktop
+LayoutName=org.kde.breeze.desktop
 
 [Windows]
 ActiveMouseScreen=false
@@ -106,12 +109,12 @@ BorderSnapZone=10
 CenterSnapZone=0
 ClickRaise=true
 DelayFocusInterval=300
-ElectricBorderCooldown=250
+ElectricBorderCooldown=300
 ElectricBorderCornerRatio=0.15
-ElectricBorderDelay=50
+ElectricBorderDelay=0
 ElectricBorderMaximize=true
 ElectricBorderTiling=true
-ElectricBorders=0
+ElectricBorders=1
 FocusPolicy=ClickToFocus
 FocusStealingPreventionLevel=1
 GeometryTip=false
@@ -132,9 +135,10 @@ WindowSnapZone=10
 
 [org.kde.kdecoration2]
 BorderSize=None
+BorderSizeAuto=false
 ButtonsOnLeft=M
 ButtonsOnRight=HIAX
 CloseOnDoubleClickOnMenu=false
 ShowToolTips=true
-library=org.kde.kwin.aurorae
-theme=__aurorae__svg__Breezemite_dark
+library=org.kde.breeze
+theme=

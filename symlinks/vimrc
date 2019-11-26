@@ -259,13 +259,14 @@ nnoremap <silent> <localleader> :<c-u>WhichKeyVisual  ','<CR>
 let g:which_key_map =  {}
 
 nnoremap <silent> <leader>, :Buffers<CR>
-nnoremap <silent> <leader>:  :Commands<CR>
-nnoremap <silent> <leader><Space>  :GFiles<CR>
-nnoremap <silent> <leader>.  :Files<CR>
+nnoremap <silent> <leader>: :Commands<CR>
+nnoremap <silent> <leader><Space> :GFiles<CR>
+nnoremap <silent> <Leader>. :Sexplore<CR>
+"nnoremap <silent> <Leader>. :Files <C-r>=expand("%:h")<CR>/<CR>
 
-vnoremap <leader>/o "gy<Esc>:call MyGoogleSearch()<CR>
-vnoremap <leader>/p "gy<Esc>:call MyRgSearch()<CR>
-nnoremap <leader>/p "gy<Esc>:Ag<CR>
+vnoremap <leader>so "gy<Esc>:call MyGoogleSearch()<CR>
+vnoremap <leader>sp "gy<Esc>:call MyRgSearch()<CR>
+nnoremap <leader>sp "gy<Esc>:Ag<CR>
 
 let g:which_key_map.f = {
       \ 'name' : '+file' ,
@@ -334,8 +335,12 @@ nnoremap <localleader>bd :bdelete<CR>
 nnoremap <localleader>m :Marks<CR>
 
 " map ,p obinding.pry_remote '0.0.0.0'<ESC>
-map <localleader>o obinding.pry<ESC>
-map <localleader>O Obinding.pry<ESC>
+" map <localleader>o obinding.pry<ESC>
+" map <localleader>O Obinding.pry<ESC>
+
+map <localleader>o orequire IEx; IEx.pry # FIXME<ESC>
+map <localleader>O Orequire IEx; IEx.pry # FIXME<ESC>
+
 map <localleader>; A;<ESC>
 map <localleader>, A,<ESC>
 

@@ -263,9 +263,9 @@ nnoremap <silent> <leader>:  :Commands<CR>
 nnoremap <silent> <leader><Space>  :GFiles<CR>
 nnoremap <silent> <leader>.  :Files<CR>
 
-vnoremap <leader>/o "gy<Esc>:call MyGoogleSearch()<CR>
-vnoremap <leader>/p "gy<Esc>:call MyRgSearch()<CR>
-nnoremap <leader>/p "gy<Esc>:Ag<CR>
+vnoremap <leader>so "gy<Esc>:call MyGoogleSearch()<CR>
+vnoremap <leader>sp "gy<Esc>:call MyRgSearch()<CR>
+nnoremap <leader>sp "gy<Esc>:Ag<CR>
 
 let g:which_key_map.f = {
       \ 'name' : '+file' ,

@@ -68,7 +68,7 @@ end
 
 function aptgetupdateshit
   sudo apt update
-  sudo apt dist-upgrade
+  sudo apt full-upgrade
 end
 
 set fish_git_dirty_color red
@@ -86,7 +86,7 @@ function parse_git_branch
 end
 
 function ruby_version
-  echo (set_color cyan)(rvm-prompt)(set_color normal)
+  echo (set_color cyan)(rvm-prompt | sed "s/ruby-//g")(set_color normal)
 end
 
 # fix for prompt in Emacs
@@ -112,9 +112,9 @@ function fishcognito
   echo "Exiting incognito session..."
 end
 
-function nvm
-   bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
+# function nvm
+#    bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
+# end
 
 function kde_blurry_pgrep
   for WINPID in (xdotool search --pid (pgrep $argv))

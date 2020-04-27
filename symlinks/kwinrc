@@ -2,7 +2,6 @@
 update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize
 
 [Compositing]
-AnimationSpeed=1
 Backend=OpenGL
 Enabled=true
 GLCore=true
@@ -18,11 +17,13 @@ Id_1=2ba6c893-9bc2-40a5-9aa9-9a472227024c
 Id_2=1feaebf2-08ba-4c65-8810-c02a4f9fa1ab
 Id_3=177a93b3-eded-4186-acfb-57e1045b3ec0
 Id_4=f43e1c86-c34e-42a4-95ce-beb1ee3aa862
+Id_5=a82882a9-4f8b-44cb-a93c-d3e4b69054d5
+Id_6=5b6bdc04-1353-4717-a42c-0bfe4cf6c6d5
 Name_1=1
 Name_2=2
 Name_3=3
 Name_4=4
-Number=4
+Number=6
 Rows=1
 
 [Effect-Cube]
@@ -34,10 +35,10 @@ BorderActivateSphere=9
 RotationDuration=200
 
 [Effect-DesktopGrid]
-BorderActivate=9
+BorderActivate=3
 
 [Effect-PresentWindows]
-BorderActivate=3,5
+BorderActivate=5
 BorderActivateAll=1,7
 BorderActivateClass=9
 
@@ -109,12 +110,12 @@ BorderSnapZone=10
 CenterSnapZone=0
 ClickRaise=true
 DelayFocusInterval=300
-ElectricBorderCooldown=250
+ElectricBorderCooldown=300
 ElectricBorderCornerRatio=0.15
-ElectricBorderDelay=50
+ElectricBorderDelay=0
 ElectricBorderMaximize=true
 ElectricBorderTiling=true
-ElectricBorders=0
+ElectricBorders=1
 FocusPolicy=ClickToFocus
 FocusStealingPreventionLevel=1
 GeometryTip=false

@@ -45,9 +45,6 @@ BorderActivateClass=9
 [Effect-Slide]
 Duration=200
 
-[Effect-kwin4_effect_translucency]
-Menus=83
-
 [ElectricBorders]
 Bottom=None
 BottomLeft=None
@@ -75,6 +72,12 @@ CommandWindow1=Activate, raise and pass click
 CommandWindow2=Activate and pass click
 CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
+
+[NightColor]
+Active=true
+LatitudeAuto=52.249
+LongitudeAuto=21.0015
+NightTemperature=1300
 
 [Plugins]
 desktopchangeosdEnabled=false
